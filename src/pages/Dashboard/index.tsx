@@ -42,9 +42,13 @@ const Dashboard: React.FC = () => {
     loadProducts();
   }, []);
 
-  function handleAddToCart({ id, title, price, image_url }: Product): void {
+  function handleAddToCart({
+    id,
+    title,
+    price,
+    image_url,
+  }: Omit<Product, 'quantity'>): void {
     addToCart({ id, title, image_url, price });
-    // navigation.navigate('Cart');
   }
 
   return (
